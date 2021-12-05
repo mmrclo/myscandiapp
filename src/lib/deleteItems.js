@@ -8,7 +8,7 @@ function deleteItems() {
 
 async function deleteItemFromDb(id) {
     try {
-        const deleted = await fetch("http://myscandiapp.000webhostapp.com/delete.php",{
+        const deleted = await fetch("https://myscandiapp.000webhostapp.com/delete.php",{
                                     method: 'DELETE',
                                     headers: new Headers({
                                         'Content-Type': 'application/json',
