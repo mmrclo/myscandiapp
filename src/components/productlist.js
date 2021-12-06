@@ -10,7 +10,7 @@ function FetchAPI() {
         .then((json) => {
             setData(json);
         })
-        .catch(error => console.log(error))
+        .catch((error) => console.log(error))
         };
 
         useEffect(() => {
