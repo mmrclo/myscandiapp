@@ -8,10 +8,9 @@ async function saveItemtoDb(product) {
     try {
         const createdItem = await fetch("https://myscandiapp.000webhostapp.com/create.php",{
                                     method: 'POST',
-                                    headers: {
-                                        'Accept': 'application/json',
+                                    headers: new Headers({
                                         'Content-Type': 'application/json',
-                                    },
+                                    }),
                                     body: JSON.stringify(product)
                                 });
         console.log(createdItem);
