@@ -5,8 +5,7 @@ function FetchAPI() {
     const [data, setData] = useState([]);
 
     const apiGet = () => {
-        //fetch("http://localhost/scandiweb/api/public/list.php")
-        fetch("http://myscandiapp.000webhostapp.com/list.php")        
+        fetch("https://myscandiapp.000webhostapp.com/list.php")        
         .then((response) => response.json())
         .then((json) => {
             setData(json);
@@ -43,7 +42,6 @@ function FetchAPI() {
 class ProductList extends React.Component {
 
     render () {
-        
         return (
         <>
             <div className="productsList">
@@ -51,7 +49,6 @@ class ProductList extends React.Component {
             </div>
         </>
         );
-    
     }
 }
 
