@@ -2,7 +2,7 @@ import { showingIds } from '../showingIds';
 
 function deleteItems() {   
     showingIds.forEach(el => {
-        deleteItemFromDb(`https://myscandiapp.000webhostapp.com/delete.php?id=${el}`);
+        deleteItemFromDb(`https://scandiappdb.herokuapp.com/api/public/delete.php?id=${el}`);
     });
 }
 
