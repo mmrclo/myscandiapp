@@ -7,7 +7,7 @@ class Home extends React.Component {
       
       performMassDelete() {
         deleteItems();
-        window.location.assign('/');
+        //window.location.assign('/');
       }
     
       render() {
