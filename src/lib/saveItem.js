@@ -6,7 +6,7 @@ function saveItem(props) {
 async function saveItemtoDb(product) {
     
     try {
-        const createdItem = await fetch("https://myscandiapp.000webhostapp.com/create.php",{
+        const createdItem = await fetch("https://scandiappdb.herokuapp.com/api/public/create.php",{
                                     method: 'POST',
                                     headers: new Headers({
                                         'Content-Type': 'application/json',
