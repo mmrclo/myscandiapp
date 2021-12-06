@@ -219,7 +219,7 @@ class AddProduct extends React.Component {
         
         //console.log(product);
         saveItem(product);
-        window.location.assign('/');
+        //window.location.assign('/');
         event.preventDefault();
     };
 
