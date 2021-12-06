@@ -2,22 +2,23 @@ import { showingIds } from '../showingIds';
 
 function deleteItems() {   
     showingIds.forEach(el => {
-        deleteItemFromDb({"id": el});
+        deleteItemFromDb(`https://myscandiapp.000webhostapp.com/delete.php?id=${el}`);
     });
 }
 
-async function deleteItemFromDb(id) {
+async function deleteItemFromDb(url) {
     try {
-        const deleted = await fetch("https://myscandiapp.000webhostapp.com/delete.php",{
+        const deleted = await fetch(url, {
                                     method: 'DELETE',
-                                    headers: new Headers({
-                                        'Content-Type': 'application/json',
-                                    }),
-                                    body: JSON.stringify(id)
+                                    headers: {
+                                        'Content-type': 'application/json'
+                                    }
                                 });
-        console.log(`> deleted < ${id} ${deleted}`);
+                            
+        
+        console.log(deleted);
     } catch (error) {
-        console.log(`CATCH ERR${error}`);
+        console.log(error);
     }
 }
 
