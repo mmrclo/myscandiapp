@@ -5,7 +5,7 @@ function FetchAPI() {
     const [data, setData] = useState([]);
 
     const apiGet = () => {
-        fetch("https://myscandiapp.000webhostapp.com/list.php")        
+        fetch("https://scandiappdb.herokuapp.com/api/public/list.php")        
         .then((response) => response.json())
         .then((json) => {
             setData(json);
