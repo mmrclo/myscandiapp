@@ -217,9 +217,8 @@ class AddProduct extends React.Component {
     handleSubmit = (event) => {
         let product = this.mountProductObject();
         
-        //console.log(product);
         saveItem(product);
-        //window.location.assign('/');
+        window.location.assign('/');
         event.preventDefault();
     };
 
