@@ -210,15 +210,12 @@ class AddProduct extends React.Component {
 
     mountProductObject() {
         let product = {...this.state, ...product_type , ...product_spec[product_type['spec_name']]};
-        
         return product;
     }
     
     handleSubmit = (event) => {
         let product = this.mountProductObject();
-        
         saveItem(product);
-        window.location.assign('/');
         event.preventDefault();
     };
 
