@@ -17,7 +17,7 @@ function FetchAPI() {
             apiGet();
         }, []); 
         
-        let textspec = { Book: 'Book', Dvd:'Disc', Furniture:'Furniture' }
+        let textspec = { Book: 'NameTest000', Dvd:'NameTest001', Furniture:'NameTest002' }
         let typespec = { Book: 'weight', Dvd:'size', Furniture:'dimension' }
         let sign = { weight: 'KG', size: 'MB'}
     return (
@@ -69,6 +69,7 @@ function ProductCard(props) {
 
                 <div className="product_specs">
                     <ul className={props.specname}>
+                        <li>{props.specname}</li>
                         <li>{props.sku}</li>
                         <li>{props.name}</li>
                         <li>{props.price} $</li>
