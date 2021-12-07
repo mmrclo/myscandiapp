@@ -31,6 +31,7 @@ function FetchAPI() {
                             spec_type={typespec[el.spec_name]} 
                             specs={el[typespec[el.spec_name]]}
                             sign={sign[typespec[el.spec_name]]}
+                            specname={el.spec_name}
             />
             )
         )}
@@ -56,7 +57,7 @@ function ProductCard(props) {
     
     function handleCheckboxChange(e) {
         (e.target.checked) ? showingIds.push(e.target.id) : showingIds.pop(e.target.id);
-        console.log(showingIds);
+        //console.log(showingIds);
     }; 
     
         return (
@@ -71,6 +72,7 @@ function ProductCard(props) {
                         <li>{props.name}</li>
                         <li>{props.price} $</li>
                         <li id="specs">{props.spec_type}: {props.specs} {props.sign}</li>
+                        <li style={{visibility: 'hidden'}}>{props.specname}</li>
                     </ul>
                 </div>
             </div>
