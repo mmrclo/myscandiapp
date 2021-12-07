@@ -17,6 +17,7 @@ function FetchAPI() {
             apiGet();
         }, []); 
         
+        let textspec = { Book: 'Book', Dvd:'Disc', Furniture:'Furniture' }
         let typespec = { Book: 'weight', Dvd:'size', Furniture:'dimension' }
         let sign = { weight: 'KG', size: 'MB'}
     return (
@@ -24,14 +25,14 @@ function FetchAPI() {
         {data.map((el) => (
             
             <ProductCard    key={el.id} 
-                            id={el.id} 
+                            id={el.id}
+                            specname={textspec[el.spec_name]}
                             sku={el.sku} 
                             name={el.name} 
                             price={el.price} 
                             spec_type={typespec[el.spec_name]} 
                             specs={el[typespec[el.spec_name]]}
                             sign={sign[typespec[el.spec_name]]}
-                            specname={el.spec_name}
             />
             )
         )}
@@ -68,11 +69,11 @@ function ProductCard(props) {
 
                 <div className="product_specs">
                     <ul>
+                        <li style={{fontSize: 'x-small'}}>{props.specname}</li>
                         <li>{props.sku}</li>
                         <li>{props.name}</li>
                         <li>{props.price} $</li>
-                        <li id="specs">{props.spec_type}: {props.specs} {props.sign}</li>
-                        <li style={{visibility: 'hidden'}}>{props.specname}</li>
+                        <li id="specs">{props.spec_type}: {props.specs} {props.sign}</li> 
                     </ul>
                 </div>
             </div>
