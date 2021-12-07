@@ -8,14 +8,16 @@ async function saveItemtoDb(product) {
     try {
         const createdItem = await fetch("https://scandiappdb.herokuapp.com/api/public/create.php",{
                                     method: 'POST',
-                                    headers: new Headers({
-                                        'Content-Type': 'application/json',
-                                    }),
+                                    headers: {
+                                        'Content-type': 'application/json'
+                                    },
                                     body: JSON.stringify(product)
                                 });
         console.log(createdItem);
+        window.location.assign('/');
     } catch (error) {
-        console.log(`CATCH ERR${error}`);
+        console.log(`CATCH ERR: ${error}`);
+        return error;
     }
 }
 
