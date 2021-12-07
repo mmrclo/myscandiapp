@@ -68,8 +68,7 @@ function ProductCard(props) {
                 </div>
 
                 <div className="product_specs">
-                    <ul>
-                        <li style={{fontSize: 'x-small'}}>{props.specname}</li>
+                    <ul className={props.specname}>
                         <li>{props.sku}</li>
                         <li>{props.name}</li>
                         <li>{props.price} $</li>
